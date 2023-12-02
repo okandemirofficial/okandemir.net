@@ -7,15 +7,19 @@ class ProjectsImageProvider extends EasyImageProvider {
   final int count;
   final String imageFolder;
 
+  final String Function(int index) pictureName;
+
   ProjectsImageProvider({
     this.initialIndex = 0,
     required this.count,
     required this.imageFolder,
+    required this.pictureName,
   });
 
   @override
   ImageProvider<Object> imageBuilder(BuildContext context, int index) {
-    ImageProvider imageProvider = AssetImage("assets/images/$imageFolder/ss$index.png");
+    ImageProvider imageProvider =
+        AssetImage("assets/images/$imageFolder/${pictureName.call(index)}");
 
     return imageProvider;
   }

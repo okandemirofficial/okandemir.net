@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_v2/extension/responsive_sizer_extension.dart';
 import 'package:portfolio_v2/utils/paddings.dart';
 import 'package:portfolio_v2/widgets/about.dart';
-import 'package:portfolio_v2/widgets/common/scroll_controllers.dart';
 import 'package:portfolio_v2/widgets/introduction.dart';
 import 'package:portfolio_v2/widgets/project_list.dart';
+import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Future.microtask(() => ManuelScrollingController.initBreakpoints());
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SelectionArea(
-        child: context.isMobile ? const MobilePage() : const DesktopPage(),
+        child: context.isMobile ? const MobilePage() : DesktopPage(),
       ),
     );
   }
@@ -26,38 +25,32 @@ class MobilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onVerticalDragUpdate: ManuelScrollingController.onVerticalDragUpdate,
-      child: CustomScrollView(
-        scrollDirection: Axis.vertical,
-        controller: ManuelScrollingController.mainController,
-        physics: const NeverScrollableScrollPhysics(),
-        slivers: const [
-          SliverToBoxAdapter(
-            child: AboutWidget(),
+    return const CustomScrollView(
+      scrollDirection: Axis.vertical,
+      slivers: [
+        SliverToBoxAdapter(
+          child: AboutWidget(),
+        ),
+        SliverToBoxAdapter(
+          child: IntroductionWidget(),
+        ),
+        SliverToBoxAdapter(
+          child: ProjectListWidget(),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 500,
           ),
-          SliverToBoxAdapter(
-            child: IntroductionWidget(),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(height: 16),
-          ),
-          SliverToBoxAdapter(
-            child: ProjectListWidget(),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 500,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }
 
 class DesktopPage extends StatelessWidget {
-  const DesktopPage({super.key});
+  DesktopPage({super.key});
+
+  final ScrollController _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,25 +61,24 @@ class DesktopPage extends StatelessWidget {
           const Expanded(flex: 2, child: AboutWidget()),
           Expanded(
             flex: 5,
-            child: Listener(
-              onPointerSignal: ManuelScrollingController.onPointerSignal,
+            child: WebSmoothScroll(
+              scrollOffset: 100,
+              animationDuration: 300,
+              controller: _controller,
               child: CustomScrollView(
+                controller: _controller,
                 scrollDirection: Axis.vertical,
-                controller: ManuelScrollingController.mainController,
                 physics: const NeverScrollableScrollPhysics(),
                 slivers: const [
                   SliverToBoxAdapter(
                     child: IntroductionWidget(),
                   ),
                   SliverToBoxAdapter(
-                    child: SizedBox(height: 64),
-                  ),
-                  SliverToBoxAdapter(
                     child: ProjectListWidget(),
                   ),
                   SliverToBoxAdapter(
                     child: SizedBox(
-                      height: 500,
+                      height: 100,
                     ),
                   )
                 ],

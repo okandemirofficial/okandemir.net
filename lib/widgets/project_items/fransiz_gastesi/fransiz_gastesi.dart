@@ -2,20 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_v2/extension/responsive_sizer_extension.dart';
 import 'package:portfolio_v2/widgets/common/conditional_expanded.dart';
 import 'package:portfolio_v2/widgets/common/row_to_colum.dart';
-import 'package:portfolio_v2/widgets/common/scroll_controllers.dart';
 import 'package:portfolio_v2/widgets/common/store_badge.dart';
 import 'package:portfolio_v2/widgets/project_items/fransiz_gastesi/app_preview/homepage.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class FransizGastesi extends StatelessWidget {
-  const FransizGastesi({super.key, required this.scrollController});
-
-  final ScrollController scrollController;
+  const FransizGastesi({super.key});
 
   @override
   Widget build(BuildContext context) {
     return RowToColumn(
-      key: context.isMobile ? null : ManuelScrollingController.globalKeys[1],
       rowCrossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ConditionalExpanded(
@@ -51,7 +47,8 @@ class FransizGastesi extends StatelessWidget {
                     height: context.isMobile ? 12.w : 19.sp,
                     child: const StoreBadge(
                         isIos: true,
-                        link: 'https://apps.apple.com/tr/app/frans%C4%B1z-gastesi/id1641149389'),
+                        link:
+                            'https://apps.apple.com/tr/app/frans%C4%B1z-gastesi/id1641149389'),
                   ),
                 ],
               ),
@@ -62,12 +59,12 @@ class FransizGastesi extends StatelessWidget {
           width: 16,
           height: context.isMobile ? 32 : 0,
         ),
-        ConditionalExpanded(
+        const ConditionalExpanded(
           expandedOnMobile: false,
           flex: 2,
           child: SizedBox(
             height: 550,
-            child: FransizGastesiHomepage(scrollController),
+            child: FransizGastesiHomepage(),
           ),
         ),
         const SizedBox(height: 16),

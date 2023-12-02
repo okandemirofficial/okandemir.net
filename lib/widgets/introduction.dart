@@ -22,7 +22,9 @@ class _IntroductionColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: context.isMobile ? const EdgeInsets.all(ProjectPaddings.medium) : EdgeInsets.zero,
+      padding: context.isMobile
+          ? const EdgeInsets.all(ProjectPaddings.medium)
+          : EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -52,7 +54,7 @@ class _IntroductionColumn extends StatelessWidget {
                           ),
                 ),
                 TextSpan(
-                  text: ' from Istanbul. A Flutter Mobile Developer with over ',
+                  text: ' from Istanbul. A Mobile Developer with over ',
                   style: context.isMobile
                       ? Theme.of(context).textTheme.headlineMedium
                       : Theme.of(context).textTheme.headlineLarge,
@@ -85,7 +87,7 @@ class _IntroductionColumn extends StatelessWidget {
                 ? Theme.of(context).textTheme.bodySmall
                 : Theme.of(context).textTheme.bodyMedium,
           ),
-          SizedBox(height: context.isMobile ? 16 : 64),
+          const SizedBox(height: 64),
           Align(
             alignment: Alignment.centerRight,
             child: Column(

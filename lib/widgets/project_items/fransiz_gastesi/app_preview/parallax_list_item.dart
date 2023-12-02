@@ -3,51 +3,59 @@ import 'package:portfolio_v2/const/project_paddings.dart';
 import 'package:portfolio_v2/widgets/project_items/fransiz_gastesi/app_preview/post_model.dart';
 
 class FransizGastesiParallaxListItem extends StatelessWidget {
-  const FransizGastesiParallaxListItem(this.model, {Key? key}) : super(key: key);
+  const FransizGastesiParallaxListItem(this.model, {Key? key})
+      : super(key: key);
 
   final FransizGastesiPostModel model;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: ProjectPaddings.medium, vertical: 8),
+      padding: const EdgeInsets.symmetric(
+          horizontal: ProjectPaddings.medium, vertical: 8),
       child: Card(
         elevation: 10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: _ParallaxListItem(
-          title: Text(
-            model.title,
-            maxLines: 2,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(color: Colors.white.withOpacity(0.8)),
+          title: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  model.title,
+                  maxLines: 2,
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                      color: Colors.white.withOpacity(0.8), fontSize: 14),
+                  textAlign: TextAlign.start,
+                ),
+              ),
+            ],
           ),
-          summary: DefaultTextStyle(
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(color: Colors.white.withOpacity(0.8)),
-            child: Text(
-              model.excerpt,
-            ),
+          summary: Text(
+            model.excerpt,
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  color: Colors.white.withOpacity(0.8),
+                ),
           ),
           aspectRatio: 3 / 2,
           backgroundItem: Image.asset(
             model.featuredMediaUrl,
             fit: BoxFit.cover,
           ),
-          author: DefaultTextStyle(
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(color: Colors.white.withOpacity(0.8)),
-            child: Row(
-              children: [
-                Text(model.date),
-                const Spacer(),
-                Text(model.author),
-              ],
-            ),
+          author: Row(
+            children: [
+              Text(
+                model.date,
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      color: Colors.white.withOpacity(0.8),
+                    ),
+              ),
+              const Spacer(),
+              Text(
+                model.author,
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      color: Colors.white.withOpacity(0.8),
+                    ),
+              ),
+            ],
           ),
         ),
       ),
@@ -91,7 +99,9 @@ class _ParallaxListItem extends StatelessWidget {
   _textWidgets(BuildContext context) {
     return Flow(
       delegate: ParallaxFlowDelegate(
-          itemglobalKey: _globalKey, listItemContext: context, scrollable: Scrollable.of(context)),
+          itemglobalKey: _globalKey,
+          listItemContext: context,
+          scrollable: Scrollable.of(context)),
       children: [
         Container(
           key: _globalKey,
@@ -99,7 +109,7 @@ class _ParallaxListItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(right: 16.0, left: 16, top: 4.0),
             child: SizedBox(
-              height: 134,
+              height: 114,
               child: Column(
                 children: [
                   title,
@@ -145,15 +155,17 @@ class ParallaxFlowDelegate extends FlowDelegate {
     // Calculate the position of this list item within the viewport.
     final scrollableBox = scrollable.context.findRenderObject() as RenderBox;
     final listItemBox = listItemContext.findRenderObject() as RenderBox;
-    final listItemOffset = listItemBox
-        .localToGlobal(listItemBox.size.topLeft(const Offset(0, -200)), ancestor: scrollableBox);
+    final listItemOffset = listItemBox.localToGlobal(
+        listItemBox.size.topLeft(const Offset(0, -200)),
+        ancestor: scrollableBox);
 
     // Determine the percent position of this list item within the
     // scrollable area.
     //final viewportDimension = scrollable.position.viewportDimension;
     final viewportDimension = scrollable.position.viewportDimension / 3;
     //final scrollFraction = (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
-    final scrollFraction = (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
+    final scrollFraction =
+        (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
 
     // Calculate the vertical alignment of the background
     // based on the scroll percent.
@@ -162,14 +174,17 @@ class ParallaxFlowDelegate extends FlowDelegate {
 
     // Convert the background alignment into a pixel offset for
     // painting purposes.
-    final backgroundSize = (itemglobalKey.currentContext!.findRenderObject() as RenderBox).size;
+    final backgroundSize =
+        (itemglobalKey.currentContext!.findRenderObject() as RenderBox).size;
     final listItemSize = context.size;
-    final childRect = verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize * 1.37);
+    final childRect = verticalAlignment.inscribe(
+        backgroundSize, Offset.zero & listItemSize * 1.37);
 
     // Paint the background.
     context.paintChild(
       0,
-      transform: Transform.translate(offset: Offset(0.0, childRect.top)).transform,
+      transform:
+          Transform.translate(offset: Offset(0.0, childRect.top)).transform,
     );
   }
 

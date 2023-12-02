@@ -6,8 +6,8 @@ import 'package:portfolio_v2/utils/project_image_providers.dart';
 import 'package:portfolio_v2/widgets/common/store_badge.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class Diziyleogren extends StatelessWidget {
-  const Diziyleogren({super.key});
+class Miniyol extends StatelessWidget {
+  const Miniyol({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +16,15 @@ class Diziyleogren extends StatelessWidget {
       children: [
         const SizedBox(height: 16),
         Text(
-          'Diziyleogren',
+          'Miniyol',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Text(
-            "• A startup was built by us, focusing on an English vocabulary learning platform that utilizes series and movies. Our idea was appreciated by many authorities, resulting in approval for inclusion in the Turkish Exporters Assembly's Startup Program"),
+            '• A new business model, Miniyol Self, offering a C2C rent-a-car solution, has been developed by our team.'),
         const Text(
-            '• The responsibility of building the platform website and mobile app was assigned to me. The Android application, under my supervision, has been downloaded 39,000 times'),
+            '''• Involvement in the KYC (Know Your Customer) process was undertaken, focusing on the integration of complex dynamic forms and the management of photo and video content.'''),
         const Text(
-            '• The tech stack utilized for the project consisted of Asp .Net, Microsoft SQL Server, jQuery, and Flutter.'),
+            '• Pixel-perfect pages were coded from Figma designs, ensuring meticulous detail and accuracy in the development process.'),
         const SizedBox(height: 16),
         SizedBox(
           height: 400,
@@ -32,7 +32,7 @@ class Diziyleogren extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              for (var i = 0; i < 7; i++)
+              for (var i = 0; i < 3; i++)
                 PaddingAll.s(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
@@ -40,16 +40,16 @@ class Diziyleogren extends StatelessWidget {
                       onTap: () => showImageViewerPager(
                         context,
                         ProjectsImageProvider(
-                          count: 4,
+                          count: 3,
                           initialIndex: i,
-                          imageFolder: 'diziyleogren',
-                          pictureName: (index) => 'ss$index.png',
+                          imageFolder: 'miniyol',
+                          pictureName: (index) => '$index.jpeg',
                         ),
                       ),
                       child: SizedBox(
                         height: 500,
                         child: Image.asset(
-                          'assets/images/diziyleogren/ss$i.png',
+                          'assets/images/miniyol/$i.jpeg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -65,10 +65,9 @@ class Diziyleogren extends StatelessWidget {
             SizedBox(
               height: context.isMobile ? 12.w : 19.sp,
               child: const StoreBadge(
-                isIos: false,
-                link:
-                    'https://play.google.com/store/apps/details?id=com.diziyleogren.diziyleogren',
-              ),
+                  isIos: false,
+                  link:
+                      'https://play.google.com/store/apps/details?id=com.miniyol.arac.kiralama'),
             ),
             const SizedBox(width: 16),
             SizedBox(
@@ -76,7 +75,7 @@ class Diziyleogren extends StatelessWidget {
               child: const StoreBadge(
                   isIos: true,
                   link:
-                      'https://apps.apple.com/tr/app/diziyleogren/id6444682457'),
+                      'https://apps.apple.com/us/app/miniyol-ara%C3%A7-kiralama/id1564745639'),
             ),
           ],
         ),

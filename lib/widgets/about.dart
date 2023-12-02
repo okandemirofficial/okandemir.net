@@ -61,7 +61,8 @@ class AboutWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () => launchUrlString('https://github.com/okandemirofficial'),
+                    onTap: () =>
+                        launchUrlString('https://github.com/okandemirofficial'),
                     child: CircleAvatar(
                       radius: 24,
                       backgroundColor: Theme.of(context).colorScheme.primary,
@@ -78,13 +79,15 @@ class AboutWidget extends StatelessWidget {
                   ),
                   PaddingHorizontal.s(
                     child: InkWell(
-                      onTap: () => launchUrlString('https://okandemirdev.medium.com/'),
+                      onTap: () =>
+                          launchUrlString('https://okandemirdev.medium.com/'),
                       child: CircleAvatar(
                         radius: 24,
                         backgroundColor: Theme.of(context).colorScheme.primary,
                         child: CircleAvatar(
                           radius: 22,
-                          backgroundColor: Theme.of(context).colorScheme.surface,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.surface,
                           child: Icon(
                             LineIcons.mediumM,
                             color: Theme.of(context).colorScheme.primary,
@@ -95,7 +98,8 @@ class AboutWidget extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () => launchUrlString('https://www.linkedin.com/in/okandemirofficial'),
+                    onTap: () => launchUrlString(
+                        'https://www.linkedin.com/in/okandemirofficial'),
                     child: CircleAvatar(
                       radius: 24,
                       backgroundColor: Theme.of(context).colorScheme.primary,
@@ -112,13 +116,15 @@ class AboutWidget extends StatelessWidget {
                   ),
                   PaddingHorizontal.s(
                     child: InkWell(
-                      onTap: () => launchUrlString('https://www.instagram.com/okandemirofficial'),
+                      onTap: () => launchUrlString(
+                          'https://www.instagram.com/okandemirofficial'),
                       child: CircleAvatar(
                         radius: 24,
                         backgroundColor: Theme.of(context).colorScheme.primary,
                         child: CircleAvatar(
                           radius: 22,
-                          backgroundColor: Theme.of(context).colorScheme.surface,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.surface,
                           child: Icon(
                             LineIcons.instagram,
                             color: Theme.of(context).colorScheme.primary,
@@ -136,23 +142,35 @@ class AboutWidget extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => launchUrlString('mailto:me@okandemir.net'),
                   style: ButtonStyle(
-                      fixedSize: const MaterialStatePropertyAll(Size.fromHeight(50)),
-                      shape: MaterialStatePropertyAll(
-                        RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                      )),
+                    fixedSize:
+                        const MaterialStatePropertyAll(Size.fromHeight(50)),
+                    shape: MaterialStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    side: MaterialStatePropertyAll(
+                      BorderSide(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.mail_outline_rounded,
-                        color: Theme.of(context).colorScheme.onPrimary,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                       const SizedBox(width: 8),
                       Text(
                         'MAIL ME!',
-                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.onPrimary,
-                            fontWeight: FontWeight.w900),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontWeight: FontWeight.w900),
                       ),
                     ],
                   ),

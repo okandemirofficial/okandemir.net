@@ -12,12 +12,20 @@ ColorScheme _projectLightColorScheme = const ColorScheme.light().copyWith(
   background: const Color.fromARGB(255, 241, 247, 253),
 );
 
-ThemeData fransizGastesiTheme = ThemeData.from(colorScheme: _projectLightColorScheme).copyWith(
+ThemeData fransizGastesiTheme =
+    ThemeData.from(colorScheme: _projectLightColorScheme).copyWith(
   canvasColor: _projectLightColorScheme.primary.withOpacity(0.9),
-  textTheme:
-      GoogleFonts.poppinsTextTheme().apply(bodyColor: Colors.black87, displayColor: Colors.black54),
-  scaffoldBackgroundColor:
-      _projectLightColorScheme.background, //https://github.com/flutter/flutter/issues/101389
+  textTheme: GoogleFonts.poppinsTextTheme()
+      .copyWith(
+          bodySmall: const TextStyle(
+        fontSize: 11.0,
+      ))
+      .apply(
+        bodyColor: Colors.black87,
+        displayColor: Colors.black54,
+      ),
+  scaffoldBackgroundColor: _projectLightColorScheme
+      .background, //https://github.com/flutter/flutter/issues/101389
   appBarTheme: AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle.dark,
     color: Colors.transparent,
@@ -25,6 +33,7 @@ ThemeData fransizGastesiTheme = ThemeData.from(colorScheme: _projectLightColorSc
     elevation: 0,
     titleSpacing: 70,
     centerTitle: true,
+    surfaceTintColor: Colors.transparent,
   ),
   buttonTheme: ThemeData.light().buttonTheme.copyWith(
         shape: RoundedRectangleBorder(

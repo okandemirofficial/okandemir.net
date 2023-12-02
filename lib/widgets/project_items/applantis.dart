@@ -3,19 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_v2/extension/responsive_sizer_extension.dart';
 import 'package:portfolio_v2/utils/paddings.dart';
 import 'package:portfolio_v2/utils/project_image_providers.dart';
-import 'package:portfolio_v2/widgets/common/scroll_controllers.dart';
 import 'package:portfolio_v2/widgets/common/store_badge.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Applantis extends StatelessWidget {
-  const Applantis({super.key, required this.scrollController});
-
-  final ScrollController scrollController;
+  const Applantis({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      key: context.isMobile ? null : ManuelScrollingController.globalKeys[0],
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 16),
@@ -34,9 +30,7 @@ class Applantis extends StatelessWidget {
           height: 400,
           width: 700,
           child: ListView(
-            key: context.isMobile ? ManuelScrollingController.globalKeys[0] : null,
             scrollDirection: Axis.horizontal,
-            controller: scrollController,
             children: [
               for (var i = 0; i < 4; i++)
                 PaddingAll.s(
@@ -49,6 +43,7 @@ class Applantis extends StatelessWidget {
                           count: 4,
                           initialIndex: i,
                           imageFolder: 'serve24',
+                          pictureName: (index) => 'ss$index.png'
                         ),
                       ),
                       child: SizedBox(
@@ -71,13 +66,15 @@ class Applantis extends StatelessWidget {
               height: context.isMobile ? 12.w : 19.sp,
               child: const StoreBadge(
                   isIos: false,
-                  link: 'https://play.google.com/store/apps/details?id=com.applantis.serve24pro'),
+                  link:
+                      'https://play.google.com/store/apps/details?id=com.applantis.serve24pro'),
             ),
             const SizedBox(width: 16),
             SizedBox(
               height: context.isMobile ? 12.w : 19.sp,
-              child:
-                  const StoreBadge(isIos: true, link: 'https://apps.apple.com/tr/app/id1661857071'),
+              child: const StoreBadge(
+                  isIos: true,
+                  link: 'https://apps.apple.com/tr/app/id1661857071'),
             ),
           ],
         ),
