@@ -62,7 +62,7 @@ class DesktopPage extends StatelessWidget {
           Expanded(
             flex: 5,
             child: WebSmoothScroll(
-              //scrollOffset: 90, brokes trackpad
+              scrollOffset: 90, //brokes trackpad
               animationDuration: 300,
               controller: _controller,
               child: CustomScrollView(

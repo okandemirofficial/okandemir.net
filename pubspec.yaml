@@ -22,8 +22,7 @@ dependencies:
   easy_image_viewer: ^1.2.0
   url_launcher: ^6.1.11
   web_smooth_scroll: 
-    git:
-      url: https://github.com/okandemirofficial/web_smooth_scroll.git
+    path: ./packages/web_smooth_scroll
 
 dev_dependencies:
   flutter_test:
