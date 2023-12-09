@@ -113,22 +113,32 @@ class _WebSmoothScrollState extends State<WebSmoothScroll> {
       final double scrollDelta = _scroll - _oldScrollState;
 
       // Animating to the calculated scroll position
-      if (scrollDelta < 150 && scrollDelta > -150) {
+      if (scrollDelta < 90 && scrollDelta > -90) {
         //If scroll through touchpad/trackpad of a laptop.
         widget.controller.jumpTo(_scroll);
-        // widget.controller.animateTo(
-        //   _scroll,
-        //   duration: const Duration(milliseconds: 400),
-        //   curve: widget.curve,
-        // );
       } else {
         //If scroll through mouse wheel.
-        // Animating to the calculated scroll position
-        widget.controller.animateTo(
-          _scroll,
-          duration: Duration(milliseconds: millis),
-          curve: widget.curve,
-        );
+        // Animating to the calculated scroll position (ofset)
+
+        if (widget.controller.offset > _scroll) {
+          widget.controller.animateTo(
+            _scroll * 0.9,
+            duration: Duration(milliseconds: millis),
+            curve: widget.curve,
+          );
+        } else {
+          widget.controller.animateTo(
+            _scroll * 1.2,
+            duration: Duration(milliseconds: millis),
+            curve: widget.curve,
+          );
+        }
+
+        // widget.controller.animateTo(
+        //   _scroll,
+        //   duration: Duration(milliseconds: millis),
+        //   curve: widget.curve,
+        // );
       }
     }
   }
