@@ -39,7 +39,7 @@ class MobilePage extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 500,
+            height: 64,
           ),
         )
       ],

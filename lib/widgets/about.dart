@@ -176,9 +176,7 @@ class AboutWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              ConstrainedBox(
-                constraints: const BoxConstraints(minHeight: 0, maxHeight: 32),
-              )
+              const Spacer(),
             ],
           ),
         ),
