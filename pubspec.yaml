@@ -21,7 +21,9 @@ dependencies:
   google_fonts: ^4.0.4
   easy_image_viewer: ^1.2.0
   url_launcher: ^6.1.11
-  web_smooth_scroll: any
+  web_smooth_scroll: 
+    git:
+      url: https://github.com/okandemirofficial/web_smooth_scroll.git
 
 dev_dependencies:
   flutter_test:

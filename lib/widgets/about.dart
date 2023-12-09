@@ -43,7 +43,7 @@ class AboutWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 32,
+                height: 16,
               ),
               Text(
                 'me@okandemir.net',

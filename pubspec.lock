@@ -116,10 +116,10 @@ packages:
     dependency: transitive
     description:
       name: http
-      sha256: d4872660c46d929f6b8a9ef4e7a7eff7e49bbf0c4ec3f385ee32df5119175139
+      sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.0"
   http_parser:
     dependency: transitive
     description:
@@ -369,10 +369,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_web
-      sha256: "138bd45b3a456dcfafc46d1a146787424f8d2edfbf2809c9324361e58f851cf7"
+      sha256: "7fd2f55fe86cea2897b963e864dc01a7eb0719ecc65fcef4c1cc3d686d718bb2"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.1"
+    version: "2.2.0"
   url_launcher_windows:
     dependency: transitive
     description:
@@ -400,10 +400,11 @@ packages:
   web_smooth_scroll:
     dependency: "direct main"
     description:
-      name: web_smooth_scroll
-      sha256: "2a4adc22e42e4045f02ecc1598885bf46adbe7ed9b05aab0a0f5df9ed071e9b6"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "9bd2285d17c7cd96b8ba0124d7005bc759a9e7ba"
+      url: "https://github.com/okandemirofficial/web_smooth_scroll.git"
+    source: git
     version: "1.1.0"
   win32:
     dependency: transitive
@@ -422,5 +423,5 @@ packages:
     source: hosted
     version: "1.0.3"
 sdks:
-  dart: ">=3.2.0 <4.0.0"
-  flutter: ">=3.16.0"
+  dart: ">=3.2.0-194.0.dev <4.0.0"
+  flutter: ">=3.13.0"

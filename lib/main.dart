@@ -24,8 +24,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
+///What is purpose of this?
+///It solves the problem on handling two directional scroll
+///Etc: vertical with touch and horizontal with drag
+///Especially solves the problem with trackpads
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
-  Set<PointerDeviceKind> get dragDevices => {PointerDeviceKind.touch, PointerDeviceKind.mouse};
+  Set<PointerDeviceKind> get dragDevices =>
+      {PointerDeviceKind.touch, PointerDeviceKind.mouse};
 }
