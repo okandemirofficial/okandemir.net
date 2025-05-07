@@ -143,13 +143,13 @@ class AboutWidget extends StatelessWidget {
                   onPressed: () => launchUrlString('mailto:me@okandemir.net'),
                   style: ButtonStyle(
                     fixedSize:
-                        const MaterialStatePropertyAll(Size.fromHeight(50)),
-                    shape: MaterialStatePropertyAll(
+                        const WidgetStatePropertyAll(Size.fromHeight(50)),
+                    shape: WidgetStatePropertyAll(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    side: MaterialStatePropertyAll(
+                    side: WidgetStatePropertyAll(
                       BorderSide(
                         color: Theme.of(context).colorScheme.primary,
                       ),

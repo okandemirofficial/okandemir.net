@@ -31,7 +31,7 @@ class ProjectListWidget extends StatelessWidget {
                 thickness: 0.5,
                 indent: 24,
                 width: 16,
-                color: appColorsDark.onBackground,
+                color: appColorsDark.onSurface,
               ),
             ),
             const SizedBox(width: 8),

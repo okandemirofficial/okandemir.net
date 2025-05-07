@@ -9,7 +9,7 @@ ColorScheme _projectLightColorScheme = const ColorScheme.light().copyWith(
   secondary: const Color.fromARGB(255, 0, 85, 164),
   onSecondary: const Color.fromARGB(255, 235, 245, 255),
   tertiary: const Color.fromARGB(255, 173, 216, 255),
-  background: const Color.fromARGB(255, 241, 247, 253),
+  surface: const Color.fromARGB(255, 241, 247, 253),
 );
 
 ThemeData fransizGastesiTheme =
@@ -25,7 +25,7 @@ ThemeData fransizGastesiTheme =
         displayColor: Colors.black54,
       ),
   scaffoldBackgroundColor: _projectLightColorScheme
-      .background, //https://github.com/flutter/flutter/issues/101389
+      .surface, //https://github.com/flutter/flutter/issues/101389
   appBarTheme: AppBarTheme(
     systemOverlayStyle: SystemUiOverlayStyle.dark,
     color: Colors.transparent,
