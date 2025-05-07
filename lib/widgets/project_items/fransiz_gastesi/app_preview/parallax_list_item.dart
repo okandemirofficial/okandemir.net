@@ -23,7 +23,8 @@ class FransizGastesiParallaxListItem extends StatelessWidget {
                   model.title,
                   maxLines: 2,
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                      color: Colors.white.withOpacity(0.8), fontSize: 14),
+                      color: Colors.white.withAlpha((0.8 * 255).round()),
+                      fontSize: 14),
                   textAlign: TextAlign.start,
                 ),
               ),
@@ -32,7 +33,7 @@ class FransizGastesiParallaxListItem extends StatelessWidget {
           summary: Text(
             model.excerpt,
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  color: Colors.white.withOpacity(0.8),
+                  color: Colors.white.withAlpha((0.8 * 255).round()),
                 ),
           ),
           aspectRatio: 3 / 2,
@@ -45,14 +46,14 @@ class FransizGastesiParallaxListItem extends StatelessWidget {
               Text(
                 model.date,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withAlpha((0.8 * 255).round()),
                     ),
               ),
               const Spacer(),
               Text(
                 model.author,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withAlpha((0.8 * 255).round()),
                     ),
               ),
             ],
@@ -105,7 +106,10 @@ class _ParallaxListItem extends StatelessWidget {
       children: [
         Container(
           key: _globalKey,
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.9),
+          color: Theme.of(context)
+              .colorScheme
+              .secondary
+              .withAlpha((0.9 * 255).round()),
           child: Padding(
             padding: const EdgeInsets.only(right: 16.0, left: 16, top: 4.0),
             child: SizedBox(

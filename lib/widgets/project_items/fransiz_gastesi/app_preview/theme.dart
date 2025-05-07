@@ -14,7 +14,7 @@ ColorScheme _projectLightColorScheme = const ColorScheme.light().copyWith(
 
 ThemeData fransizGastesiTheme =
     ThemeData.from(colorScheme: _projectLightColorScheme).copyWith(
-  canvasColor: _projectLightColorScheme.primary.withOpacity(0.9),
+  canvasColor: _projectLightColorScheme.primary.withAlpha((0.9 * 255).round()),
   textTheme: GoogleFonts.poppinsTextTheme()
       .copyWith(
           bodySmall: const TextStyle(
