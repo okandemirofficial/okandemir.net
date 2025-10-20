@@ -7,6 +7,8 @@ import 'package:portfolio_v2/widgets/project_items/applantis.dart';
 import 'package:portfolio_v2/widgets/project_items/diziyleogren.dart';
 import 'package:portfolio_v2/widgets/project_items/fransiz_gastesi/fransiz_gastesi.dart';
 import 'package:portfolio_v2/widgets/project_items/miniyol.dart';
+import 'package:portfolio_v2/widgets/project_items/starpath_protocol.dart';
+import 'package:portfolio_v2/widgets/project_items/orion_innovation.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ProjectListWidget extends StatelessWidget {
@@ -26,7 +28,7 @@ class ProjectListWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: context.isMobile ? 405.h : 2900,
+              height: context.isMobile ? 465.h : 3300,
               child: VerticalDivider(
                 thickness: 0.5,
                 indent: 24,
@@ -46,7 +48,31 @@ class ProjectListWidget extends StatelessWidget {
                       size: 16,
                     ),
                   ),
-                  const Text('June 23 - Present'),
+                  const Text('Jan 24 - Present'),
+                  const OrionInnovation(),
+                  const SizedBox(
+                    height: 64,
+                  ),
+                  Transform.translate(
+                    offset: const Offset(-24, 18),
+                    child: const Icon(
+                      Icons.circle_rounded,
+                      size: 16,
+                    ),
+                  ),
+                  const Text('2024 - Present'),
+                  const StarpathProtocol(),
+                  const SizedBox(
+                    height: 64,
+                  ),
+                  Transform.translate(
+                    offset: const Offset(-24, 18),
+                    child: const Icon(
+                      Icons.circle_rounded,
+                      size: 16,
+                    ),
+                  ),
+                  const Text('June 23 - Jan 24'),
                   const Miniyol(),
                   const SizedBox(
                     height: 64,
