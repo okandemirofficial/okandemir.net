@@ -60,7 +60,7 @@ class _IntroductionColumn extends StatelessWidget {
                       : Theme.of(context).textTheme.headlineLarge,
                 ),
                 TextSpan(
-                  text: '3',
+                  text: '4',
                   style: context.isMobile
                       ? Theme.of(context).textTheme.headlineMedium!.copyWith(
                             color: appColorsDark.primary,
